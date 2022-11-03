@@ -1,0 +1,32 @@
+<h1>Add Product</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>title</th>
+      <th>quantity</th>
+      <th>price</th>
+      <th>category</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of list">
+      <td>{{p.id}}</td>
+      <td>{{p.title}}</td>
+      <td>{{p.quantity}}</td>
+      <td>{{p.price}}</td>
+      <td>{{p.category}}</td>
+      <td>
+        <button class="btn btn-sm btn-danger"
+        (click)="deleteProduct(p)">
+          delete
+        </button>
+        &nbsp;
+        <a [routerLink]="['/products/update',p.id]" class="btn btn-sm btn-warning">
+          update
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
